@@ -12,4 +12,4 @@ Let's you export a timeline to individual .cdl files. Comes with a mini resolve 
 Meant to work with dailies workflows where you have a timeline of nodes with a cdl adjustment node and a lut node only. Doesn't work well on a full edit.
 make sure your luma adjustment is set to 0 as per the resolve manual. - please note export lut button not working yet but you can have fun clicking it if you want.
 
-![Alt text](Assets/ExportCDL.jpg?raw=true "ExportCDL")
+![](/Assets/ExportCDL.JPG)

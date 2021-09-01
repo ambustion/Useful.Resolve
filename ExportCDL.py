@@ -4,6 +4,7 @@ import re
 from shutil import copyfile
 
 ScriptDir = os.path.dirname(os.path.realpath(sys.argv[0]))
+DefaultDir='Y://TLOU//DISTRIBUTION'
 
 ui = fu.UIManager
 disp = bmd.UIDispatcher(ui)
@@ -242,7 +243,7 @@ def _func(ev):
 dlg.On.MyWin.Close = _func
 
 def _func(ev):
-    selectedPath=str(fu.RequestDir('Y://TLOU//DISTRIBUTION'))
+    selectedPath=str(fu.RequestDir(DefaultDir))
 
     print('[Folder] ' , selectedPath)
     itm['FolderTxt'].Text=selectedPath

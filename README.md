@@ -13,3 +13,7 @@ Meant to work with dailies workflows where you have a timeline of nodes with a c
 make sure your luma adjustment is set to 0 as per the resolve manual. - please note export lut button not working yet but you can have fun clicking it if you want.
 
 ![](/Assets/ExportCDL.JPG)
+
+
+GetStillsAtGMarkers.py
+-Grabs stills at all Green markers by default. Can change color by editing the script. Relies on my ResolveTransport Module(in progress but it works for me). Also requires pyautogui(Pip install pyautogui) for now but once I can update my resolve will integrate the new stills commands into it so that won't be needed.

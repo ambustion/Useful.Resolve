@@ -41,3 +41,6 @@ rt.settc(01:00:00:00)
 
 ### Get current timeline fps
 rt.getfps
+
+#slate.setting
+A fusion slate to read timecode and project name automatically from resolve timelines. 

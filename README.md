@@ -8,7 +8,7 @@ Most rely on having python(3.6) scripting set up in resolve. I've been making mo
 
 # Resolve External environment setup
 This is just an example of how I've been able to call resolve from a script from outside of resolve. Helpful if you want to use your own python version or just to have threaded scripts run outside of the main resolve UI scripting.
-'''
+```
 ###env initialization
 import sys
 from sys import platform
@@ -34,7 +34,7 @@ fu = bmd.scriptapp('Fusion')
 resolve = bmd.scriptapp('Resolve')
 ui = fu.UIManager
 disp = bmd.UIDispatcher(ui)
-'''
+```
 
 # ExportCDL.py:
 Let's you export a timeline to individual .cdl files. Comes with a mini resolve gui just for some double checking. Also can export a timeline edl alongside the cdl. 

@@ -1,13 +1,40 @@
 import os
-import xml.etree.ElementTree as ET
-import re
 from shutil import copyfile
+import re
+import xml.etree.ElementTree as ET
+import shutil
+
+
+###env initialization
+import sys
+from sys import platform
+if platform == "linux" or platform == "linux2":
+    env = "linux"
+    Resolve_Loc = r'/opt/resolve/Developer/Scripting/Modules'
+    print("Linux OS")
+elif platform == "darwin":
+    env = "mac"
+    Resolve_Loc=r'/Library/Application Support/Blackmagic Design/DaVinci Resolve/Developer/Scripting/Modules'
+    print("System is mac OS")
+elif platform == "win32":
+    env = "win"
+    Resolve_Loc=r'C:\ProgramData\Blackmagic Design\DaVinci Resolve\Support\Developer\Scripting\Modules'
+    print("Windows OS")
+else:
+    print("error getting system platform")
+sys.path.insert(1,Resolve_Loc)
+import DaVinciResolveScript as bmd
 
 ScriptDir = os.path.dirname(os.path.realpath(sys.argv[0]))
-DefaultDir='Y://TLOU//DISTRIBUTION'
-
+fu = bmd.scriptapp('Fusion')
+resolve = bmd.scriptapp('Resolve')
 ui = fu.UIManager
 disp = bmd.UIDispatcher(ui)
+
+
+###USER CONFIG
+defaultDir = 'W://TLU//DISTRIBUTION'
+
 ClipsBool = True
 
 def create_table():
@@ -243,7 +270,7 @@ def _func(ev):
 dlg.On.MyWin.Close = _func
 
 def _func(ev):
-    selectedPath=str(fu.RequestDir(DefaultDir))
+    selectedPath=str(fu.RequestDir(defaultDir))
 
     print('[Folder] ' , selectedPath)
     itm['FolderTxt'].Text=selectedPath

@@ -11,6 +11,7 @@ This is just an example of how I've been able to call resolve from a script from
 ```
 ###env initialization
 import sys
+import os
 from sys import platform
 if platform == "linux" or platform == "linux2":
     env = "linux"
